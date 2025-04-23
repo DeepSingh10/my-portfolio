@@ -6,7 +6,7 @@ export default function Home() {
       <div>Say Hi, to Deep Singh Yadav...!!!</div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-       <div>Harshit lodu hai</div>
+<div> this is temporary footer</div>
       </footer>
     </div>
   );
