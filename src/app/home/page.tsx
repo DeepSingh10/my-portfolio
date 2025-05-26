@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LuChevronRight } from "react-icons/lu";
 
-const Home = () => {
+const Home = async () => {
   return (
     <div className="bg-[#020618] min-h-screen h-full flex justify-center items-center p-7">
       <div className="relative bg-[#0F172B] min-h-[calc(100vh-60px)] max-h-fit w-full border rounded-sm border-[#314158] opacity-80 flex flex-col justify-between">
