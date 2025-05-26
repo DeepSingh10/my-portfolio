@@ -30,7 +30,7 @@ const Home = () => {
                   className="text-[#e99287]"
                   href={"https://github.com/DeepSingh10"}
                 >
-                  "https://github.com/DeepSingh10"
+                  &quot;https://github.com/DeepSingh10&quot;
                 </Link>
               </div>
             </div>

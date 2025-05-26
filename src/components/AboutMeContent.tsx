@@ -1,17 +1,22 @@
 "use client";
 import React, { useState } from "react";
 import { PiTerminalFill } from "react-icons/pi";
-import { RiContactsFill } from "react-icons/ri";
-import { RiGamepadFill } from "react-icons/ri";
+import { RiContactsFill, RiGamepadFill } from "react-icons/ri";
 import ProfessionalMenu from "./sub-menus/ProfessionalMenu";
 
 interface TabsProps {
   activeTab: number;
-  handleTabSwitch: Function;
+  handleTabSwitch: (id: number) => void;
+}
+
+interface MenuItem {
+  id: number;
+  name: string;
+  icon: React.ReactNode;
 }
 
 const Tabs: React.FC<TabsProps> = ({ activeTab, handleTabSwitch }) => {
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     {
       id: 1,
       name: "Professional Information",
@@ -26,7 +31,7 @@ const Tabs: React.FC<TabsProps> = ({ activeTab, handleTabSwitch }) => {
       {menuItems.map((item) => (
         <div
           key={item.id}
-          className={`${activeTab === item.id ? "text-white" : "text-[#314158]"}`}
+          className={`${activeTab === item.id ? "text-white" : "text-[#314158]"} cursor-pointer`}
           onClick={() => handleTabSwitch(item.id)}
         >
           {item.icon}
@@ -36,10 +41,10 @@ const Tabs: React.FC<TabsProps> = ({ activeTab, handleTabSwitch }) => {
   );
 };
 
-const AboutMeContent = () => {
+const AboutMeContent: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(1);
 
-  const handleTabSwitch = (id: number) => {
+  const handleTabSwitch = (id: number): void => {
     setActiveTab(id);
   };
 
