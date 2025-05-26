@@ -21,7 +21,7 @@ const Home = () => {
               </h2>
             </div>
             <div>
-              <p className="text-[#90A1B9]">// find my profile on</p>
+              <p className="text-[#90A1B9]">{"// find my profile on"}</p>
               <div className="flex gap-1.5">
                 <span className="text-[#6172ff]">const</span>
                 <span className="text-[#43d9ad]">githublink</span>
