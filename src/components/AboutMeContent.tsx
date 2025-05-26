@@ -47,11 +47,9 @@ const AboutMeContent = () => {
     <div className="flex w-full h-[calc(100vh-150px)] max-h-full">
       <div className="w-full max-w-[250px] border-r border-[#314158] flex h-full">
         <Tabs activeTab={activeTab} handleTabSwitch={handleTabSwitch} />
-        <ProfessionalMenu/>
+        <ProfessionalMenu />
       </div>
-      <div className="w-full">
-
-      </div>
+      <div className="w-full"></div>
     </div>
   );
 };
