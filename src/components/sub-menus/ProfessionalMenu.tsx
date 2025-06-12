@@ -37,7 +37,8 @@ const ProfessionalSubMenu = ({
           key={item.id}
           className="flex gap-2 items-center p-2 py-1 cursor-pointer"
           onClick={() => {
-            handleClose(item.id, false), handleActiveContent(item.id);
+            handleClose(item.id, false);
+            handleActiveContent(item.id);
           }}
         >
           {open[item.id] ? <FaChevronDown /> : <FaChevronRight />}
