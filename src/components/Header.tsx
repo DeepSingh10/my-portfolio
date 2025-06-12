@@ -5,7 +5,6 @@ import React from "react";
 
 const Header = () => {
   const path = usePathname();
-  console.log("g", path);
 
   return (
     <div className="w-full h-[45px] border-[#314158] border-b flex justify-between text-[#b4c8db]">
@@ -13,22 +12,24 @@ const Header = () => {
         <div className="border-r border-[#314158] w-full max-w-[275px] px-6 py-2">
           Deep Singh Yadav
         </div>
-        <div
+        <Link
+          href={"/home"}
           className={`border-r border-[#314158] w-full max-w-fit px-6 text-center py-2 ${path === "/home" ? "border-b-amber-400 border-b-2 " : ""}`}
         >
           _hello
-        </div>
+        </Link>
         <Link
           href={"/about-me"}
           className={`border-r border-[#314158] w-full max-w-fit px-6 text-center py-2 ${path === "/about-me" ? "border-b-amber-400 border-b-2 " : ""}`}
         >
           _about_me
         </Link>
-        <div
+        <Link
+          href={"/projects"}
           className={`border-r border-[#314158] w-full max-w-fit px-6 text-center py-2 ${path === "/projects" ? "border-b-amber-400 border-b-2 " : ""}`}
         >
           _projects
-        </div>
+        </Link>
       </div>
       <div className="flex w-[20%] justify-end">
         <div

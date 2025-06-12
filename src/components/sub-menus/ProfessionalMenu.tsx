@@ -3,18 +3,20 @@ import { FaCaretDown } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 import { GiOpenFolder } from "react-icons/gi";
-import ContactMenuItems from "../contact/ContactMenuItems";
+import ContactMenuItems from "../commen/contact/ContactMenuItems";
 
 interface MenuProps {
   menuOpen: Record<number, boolean>;
   handleSubMenu: (id: number) => void;
   professionalSubOpen: Record<number, boolean>;
-  handleProfessionalSubMenu: (id: number) => void;
+  handleClose: (id: number, flag: boolean) => void;
+  handleActiveContent: (id: number) => void;
 }
 
 interface SubMenuProps {
   open: Record<number, boolean>;
-  handleProfessionalSubMenu: (id: number) => void;
+  handleClose: (id: number, flag: boolean) => void;
+  handleActiveContent: (id: number) => void;
 }
 
 export const ProfessionalSubMenuList = [
@@ -25,7 +27,8 @@ export const ProfessionalSubMenuList = [
 
 const ProfessionalSubMenu = ({
   open,
-  handleProfessionalSubMenu,
+  handleClose,
+  handleActiveContent,
 }: SubMenuProps) => {
   return (
     <div className="flex flex-col text-white border-b border-[#314158] p-1">
@@ -33,7 +36,9 @@ const ProfessionalSubMenu = ({
         <div
           key={item.id}
           className="flex gap-2 items-center p-2 py-1 cursor-pointer"
-          onClick={() => handleProfessionalSubMenu(item.id)}
+          onClick={() => {
+            handleClose(item.id, false), handleActiveContent(item.id);
+          }}
         >
           {open[item.id] ? <FaChevronDown /> : <FaChevronRight />}
           <GiOpenFolder color={item?.color} />
@@ -48,7 +53,8 @@ const ProfessionalMenu = ({
   menuOpen,
   handleSubMenu,
   professionalSubOpen,
-  handleProfessionalSubMenu,
+  handleClose,
+  handleActiveContent,
 }: MenuProps) => {
   return (
     <div className="h-full w-full flex flex-col">
@@ -62,7 +68,8 @@ const ProfessionalMenu = ({
       {menuOpen[1] && (
         <ProfessionalSubMenu
           open={professionalSubOpen}
-          handleProfessionalSubMenu={handleProfessionalSubMenu}
+          handleClose={handleClose}
+          handleActiveContent={handleActiveContent}
         />
       )}
       <ContactMenuItems menuOpen={menuOpen} handleSubMenu={handleSubMenu} />
